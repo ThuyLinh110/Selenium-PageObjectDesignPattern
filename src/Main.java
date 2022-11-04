@@ -18,13 +18,15 @@ public class Main {
         LoginPage loginPage = new LoginPage();
         loginPage.openPage("http://www.railwayb2.somee.com/Account/Login.cshtml", driver);
         loginPage.navigateForgotPasswordLink();
+        loginPage.closePage();
 //        loginPage.navigateRegisterLink();
 //        loginPage.login("linh@gmail.com","123456789");
 
 
 //        RegisterPage registerPage = new RegisterPage();
 //        registerPage.openPage("http://www.railwayb2.somee.com/Account/Register.cshtml", driver);
-////        registerPage.register("linh@gmail.com","1234567890","1234567098","123456789");
+//        registerPage.navigateConfirmCode();
+//        registerPage.register("linh@gmail.com","1234567890","1234567098","123456789");
 //        registerPage.navigateLoginPage();
     }
 }

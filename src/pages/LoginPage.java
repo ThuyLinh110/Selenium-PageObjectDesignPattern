@@ -28,8 +28,14 @@ public class LoginPage {
     //Methods
     public void openPage(String baseUrl, WebDriver driver)
     {
-        driver.get(baseUrl);
+
         this.driver = driver ;
+        this.driver.get(baseUrl);
+    }
+    public void closePage()
+    {
+        this.driver.close();
+
     }
 
     public void login(String userName, String password)

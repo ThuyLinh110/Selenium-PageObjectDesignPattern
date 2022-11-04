@@ -14,6 +14,7 @@ public class RegisterPage
     private By txtPID = By.xpath("//input[@id='pid']");
     private By btnRegister = By.xpath("//input[@value='Register']");
     private By lnkLogin = By.xpath("//div[@id ='content']//a[@href ='/Account/Login.cshtml'] ");
+    private By lnkConfirmCode = By.xpath("//div[@id ='content']//a[@href ='Confirm.cshtml'] ");
 
 
 
@@ -24,14 +25,19 @@ public class RegisterPage
     private WebElement getTxtPID(){return driver.findElement(txtPID); }
     private WebElement getBtnRegister() {return driver.findElement(btnRegister) ;}
     private WebElement getLnkLogin(){return driver.findElement(lnkLogin) ;}
+    private WebElement getLnkConfirmCode(){return  driver.findElement(lnkConfirmCode); }
 
 
 
     //Methods
     public void openPage(String baseUrl, WebDriver driver)
     {
-        driver.get(baseUrl);
         this.driver = driver ;
+        this.driver.get(baseUrl);
+    }
+    public void closePage()
+    {
+        this.driver.close();
     }
 
     public void register(String userName, String password, String confirmPassword, String PID)
@@ -47,6 +53,10 @@ public class RegisterPage
     {
         getLnkLogin().click();
 
+    }
+    public void navigateConfirmCode()
+    {
+        getLnkConfirmCode().click();
     }
 
 
