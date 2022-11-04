@@ -5,10 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class LoginPage {
+public class LoginPage extends BasePage
+{
     //Locators
 
-    private WebDriver driver ;
     private By txtUserName = By.xpath("//input[@id='username']");
     private By txtPassword = By.xpath("//input[@id='password']");
     private By btnLogin = By.xpath("//input[@value='Login']");
@@ -17,26 +17,15 @@ public class LoginPage {
 
 
     //WebElements
-    private WebElement getTxtUserName() {return driver.findElement(txtUserName) ;}
-    private WebElement getTxtPassword() {return driver.findElement(txtPassword) ;}
-    private WebElement getBtnLogin() {return driver.findElement(btnLogin) ;}
-    private WebElement getLnkRegister() {return driver.findElement(lnkRegister) ; }
-    private WebElement getLnkForgotPassword() {return driver.findElement(lnkForgotPassword) ; }
+    private WebElement getTxtUserName() {return this.driver.findElement(txtUserName) ;}
+    private WebElement getTxtPassword() {return this.driver.findElement(txtPassword) ;}
+    private WebElement getBtnLogin() {return this.driver.findElement(btnLogin) ;}
+    private WebElement getLnkRegister() {return this.driver.findElement(lnkRegister) ; }
+    private WebElement getLnkForgotPassword() {return this.driver.findElement(lnkForgotPassword) ; }
 
 
 
     //Methods
-    public void openPage(String baseUrl, WebDriver driver)
-    {
-
-        this.driver = driver ;
-        this.driver.get(baseUrl);
-    }
-    public void closePage()
-    {
-        this.driver.close();
-
-    }
 
     public void login(String userName, String password)
     {

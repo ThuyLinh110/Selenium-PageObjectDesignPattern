@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RegisterPage
+public class RegisterPage extends BasePage
 {
    // Locators
-    private WebDriver driver ;
+
     private By txtUserName = By.xpath("//input[@id='email']");
     private By txtPassword = By.xpath("//input[@id='password']");
     private By txtConfirmPassword = By.xpath("//input[@id='confirmPassword']");
@@ -19,26 +19,18 @@ public class RegisterPage
 
 
     //Web Elements
-    private WebElement getTxtUserName() {return driver.findElement(txtUserName) ;}
-    private WebElement getTxtPassword() {return driver.findElement(txtPassword) ;}
-    private WebElement getTxtConfirmPassword(){return driver.findElement(txtConfirmPassword); }
-    private WebElement getTxtPID(){return driver.findElement(txtPID); }
-    private WebElement getBtnRegister() {return driver.findElement(btnRegister) ;}
-    private WebElement getLnkLogin(){return driver.findElement(lnkLogin) ;}
-    private WebElement getLnkConfirmCode(){return  driver.findElement(lnkConfirmCode); }
+    private WebElement getTxtUserName() {return this.driver.findElement(txtUserName) ;}
+    private WebElement getTxtPassword() {return this.driver.findElement(txtPassword) ;}
+    private WebElement getTxtConfirmPassword(){return this.driver.findElement(txtConfirmPassword); }
+    private WebElement getTxtPID(){return this.driver.findElement(txtPID); }
+    private WebElement getBtnRegister() {return this.driver.findElement(btnRegister) ;}
+    private WebElement getLnkLogin(){return this.driver.findElement(lnkLogin) ;}
+    private WebElement getLnkConfirmCode(){return  this.driver.findElement(lnkConfirmCode); }
 
 
 
     //Methods
-    public void openPage(String baseUrl, WebDriver driver)
-    {
-        this.driver = driver ;
-        this.driver.get(baseUrl);
-    }
-    public void closePage()
-    {
-        this.driver.close();
-    }
+
 
     public void register(String userName, String password, String confirmPassword, String PID)
     {

@@ -18,6 +18,12 @@ public class Main {
         LoginPage loginPage = new LoginPage();
         loginPage.openPage("http://www.railwayb2.somee.com/Account/Login.cshtml", driver);
         loginPage.login("linh123@gmail.com","1234567890");
+        loginPage.clickTabHome();
+        loginPage.clickTabBookTicket();
+        loginPage.clickTabTimetable();
+        loginPage.clickTabContact();
+        loginPage.clickTabLogout();
+        loginPage.closePage();
 
 
 
