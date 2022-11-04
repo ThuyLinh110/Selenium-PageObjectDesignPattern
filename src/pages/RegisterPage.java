@@ -13,6 +13,9 @@ public class RegisterPage
     private By txtConfirmPassword = By.xpath("//input[@id='confirmPassword']");
     private By txtPID = By.xpath("//input[@id='pid']");
     private By btnRegister = By.xpath("//input[@value='Register']");
+    private By lnkLogin = By.xpath("//div[@id ='content']//a[@href ='/Account/Login.cshtml'] ");
+
+
 
     //Web Elements
     private WebElement getTxtUserName() {return driver.findElement(txtUserName) ;}
@@ -20,6 +23,8 @@ public class RegisterPage
     private WebElement getTxtConfirmPassword(){return driver.findElement(txtConfirmPassword); }
     private WebElement getTxtPID(){return driver.findElement(txtPID); }
     private WebElement getBtnRegister() {return driver.findElement(btnRegister) ;}
+    private WebElement getLnkLogin(){return driver.findElement(lnkLogin) ;}
+
 
 
     //Methods
@@ -36,6 +41,12 @@ public class RegisterPage
         getTxtConfirmPassword().sendKeys(confirmPassword);
         getTxtPID().sendKeys(PID);
         getBtnRegister().click();
+    }
+
+    public void navigateLoginPage()
+    {
+        getLnkLogin().click();
+
     }
 
 
